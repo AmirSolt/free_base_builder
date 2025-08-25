@@ -1,0 +1,14 @@
+[gd_scene load_steps=2 format=3 uid="uid://bdf83vtbagsop"]
+
+[ext_resource type="Script" uid="uid://dun3v8xjjojqa" path="res://bb_core/building_button/building_button.gd" id="1_e5a5p"]
+
+[node name="BuildingButton" type="Button"]
+custom_minimum_size = Vector2(200, 0)
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+icon_alignment = 1
+expand_icon = true
+script = ExtResource("1_e5a5p")

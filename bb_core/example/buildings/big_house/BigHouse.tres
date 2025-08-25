@@ -1,0 +1,18 @@
+[gd_resource type="Resource" script_class="BuildingData" load_steps=5 format=3 uid="uid://c8texf3b6o56b"]
+
+[ext_resource type="PackedScene" uid="uid://br2n2mkmy7a6r" path="res://bb_core/example/buildings/big_house/big_house.tscn" id="1_j3q8a"]
+[ext_resource type="Script" uid="uid://dhlbdgx5effpp" path="res://bb_core/building/building_data.gd" id="1_vnwtj"]
+[ext_resource type="PackedScene" uid="uid://b5pspmvbcubtc" path="res://bb_core/example/buildings/big_house/big_house_mesh.tscn" id="2_uyq7x"]
+[ext_resource type="Texture2D" uid="uid://f6fj47p4ohge" path="res://bb_core/example/assets/images/big_house_icon.png" id="2_w1u5i"]
+
+[resource]
+script = ExtResource("1_vnwtj")
+icon = ExtResource("2_w1u5i")
+display_name = "Big House"
+description = "This is a big house"
+mesh_scene = ExtResource("2_uyq7x")
+building_scene = ExtResource("1_j3q8a")
+size = Vector2i(2, 2)
+range = 1
+surface_collision_layer = 2
+metadata/_custom_type_script = "uid://dhlbdgx5effpp"

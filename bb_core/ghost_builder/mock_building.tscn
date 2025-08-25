@@ -1,0 +1,68 @@
+[gd_scene load_steps=14 format=3 uid="uid://0q07p5miaxl5"]
+
+[ext_resource type="Script" uid="uid://bib7y42ekt7mr" path="res://bb_core/ghost_builder/mock_building.gd" id="1_8nmnn"]
+[ext_resource type="PackedScene" uid="uid://dmnx4dnicmtfl" path="res://bb_core/building/components/base_highlight/base_highlight.tscn" id="2_wya72"]
+[ext_resource type="PackedScene" uid="uid://bvcryjx3d26ic" path="res://bb_core/building/components/range_outline/range_outline.tscn" id="3_p202p"]
+[ext_resource type="Shader" uid="uid://301vnn6d4we7" path="res://bb_core/building/components/range_outline/animated_outile.gdshader" id="4_61xux"]
+[ext_resource type="PackedScene" uid="uid://c5inlb3u63wff" path="res://bb_core/building/components/grid_lines/grid_lines.tscn" id="5_wya72"]
+[ext_resource type="Shader" uid="uid://dxtvftepb1rt8" path="res://bb_core/building/components/grid_lines/grid_lines_depth_test_disabled.gdshader" id="7_2v5vo"]
+[ext_resource type="PackedScene" uid="uid://xtpvcvvri0px" path="res://bb_core/building/components/building_highlight/building_highlight.tscn" id="7_61xux"]
+
+[sub_resource type="ShaderMaterial" id="ShaderMaterial_m1b64"]
+render_priority = 0
+shader = ExtResource("4_61xux")
+shader_parameter/dot_color = Color(1, 1, 1, 1)
+shader_parameter/border_thickness = 0.04
+shader_parameter/dot_spacing = 20.0
+shader_parameter/dot_duty = 0.25
+shader_parameter/speed = 1.0
+
+[sub_resource type="PlaneMesh" id="PlaneMesh_680td"]
+material = SubResource("ShaderMaterial_m1b64")
+size = Vector2(3, 4)
+
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_iej65"]
+transparency = 1
+no_depth_test = true
+shading_mode = 0
+albedo_color = Color(0, 1, 0, 0.541176)
+
+[sub_resource type="PlaneMesh" id="PlaneMesh_nys7b"]
+material = SubResource("StandardMaterial3D_iej65")
+size = Vector2(1, 1)
+
+[sub_resource type="ShaderMaterial" id="ShaderMaterial_4ojmb"]
+render_priority = 0
+shader = ExtResource("7_2v5vo")
+shader_parameter/line_width = 0.139
+shader_parameter/grid_size = 1.0
+shader_parameter/line_color = Color(0, 0, 0, 0.054902)
+shader_parameter/fill_color = Color(0, 0, 0, 0)
+
+[sub_resource type="PlaneMesh" id="PlaneMesh_3ktee"]
+material = SubResource("ShaderMaterial_4ojmb")
+size = Vector2(8, 8)
+
+[node name="MockBuilding" type="StaticBody3D" node_paths=PackedStringArray("highlights", "mesh_instance", "building_highlight")]
+script = ExtResource("1_8nmnn")
+highlights = NodePath("Highlights")
+mesh_instance = NodePath("MeshInstance3D")
+building_highlight = NodePath("Highlights/BuildingHighlight")
+
+[node name="MeshInstance3D" type="MeshInstance3D" parent="."]
+
+[node name="Highlights" type="Node3D" parent="."]
+
+[node name="RangeOutline" parent="Highlights" instance=ExtResource("3_p202p")]
+mesh = SubResource("PlaneMesh_680td")
+skeleton = NodePath("../..")
+
+[node name="BaseHighlight" parent="Highlights" instance=ExtResource("2_wya72")]
+mesh = SubResource("PlaneMesh_nys7b")
+skeleton = NodePath("../..")
+
+[node name="GridLines" parent="Highlights" instance=ExtResource("5_wya72")]
+mesh = SubResource("PlaneMesh_3ktee")
+
+[node name="BuildingHighlight" parent="Highlights" node_paths=PackedStringArray("mesh") instance=ExtResource("7_61xux")]
+mesh = NodePath("../../MeshInstance3D")

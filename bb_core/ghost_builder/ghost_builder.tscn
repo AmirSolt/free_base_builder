@@ -1,0 +1,18 @@
+[gd_scene load_steps=4 format=3 uid="uid://8pw7xckd21ix"]
+
+[ext_resource type="Script" uid="uid://mw37oir7opuv" path="res://bb_core/ghost_builder/ghost_builder.gd" id="1_j2ifu"]
+[ext_resource type="PackedScene" uid="uid://0q07p5miaxl5" path="res://bb_core/ghost_builder/mock_building.tscn" id="2_1dynp"]
+
+[sub_resource type="BoxShape3D" id="BoxShape3D_6p8vb"]
+
+[node name="GhostBuilder" type="Area3D" node_paths=PackedStringArray("mock_building", "base_collision")]
+collision_layer = 0
+collision_mask = 255
+script = ExtResource("1_j2ifu")
+mock_building = NodePath("MockBuilding")
+base_collision = NodePath("BaseCollision")
+
+[node name="BaseCollision" type="CollisionShape3D" parent="."]
+shape = SubResource("BoxShape3D_6p8vb")
+
+[node name="MockBuilding" parent="." instance=ExtResource("2_1dynp")]

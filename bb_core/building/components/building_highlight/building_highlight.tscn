@@ -1,0 +1,6 @@
+[gd_scene load_steps=2 format=3 uid="uid://xtpvcvvri0px"]
+
+[ext_resource type="Script" uid="uid://cwgitc8g1cy25" path="res://bb_core/building/components/building_highlight/building_highlight.gd" id="1_kj276"]
+
+[node name="BuildingHighlight" type="Node3D"]
+script = ExtResource("1_kj276")

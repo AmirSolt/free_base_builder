@@ -1,0 +1,12 @@
+[gd_resource type="ShaderMaterial" load_steps=2 format=3 uid="uid://cadf2cnddefq"]
+
+[ext_resource type="Shader" uid="uid://301vnn6d4we7" path="res://bb_core/building/components/range_outline/animated_outile.gdshader" id="1_n7qnq"]
+
+[resource]
+render_priority = 0
+shader = ExtResource("1_n7qnq")
+shader_parameter/dot_color = Color(0.981746, 0.981772, 0.987921, 0.992157)
+shader_parameter/border_thickness = 0.023
+shader_parameter/dot_spacing = 0.151
+shader_parameter/dot_duty = 0.436
+shader_parameter/speed = 0.2

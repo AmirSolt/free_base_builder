@@ -1,0 +1,9 @@
+[gd_scene load_steps=2 format=3 uid="uid://bf6bkhetvd12y"]
+
+[ext_resource type="Script" uid="uid://cyt32enf2drq8" path="res://bb_core/gridmap_builder/gridmap_builder.gd" id="1_o66jk"]
+
+[node name="GridmapBuilder" type="GridMap"]
+cell_size = Vector3(1, 1, 1)
+cell_center_y = false
+script = ExtResource("1_o66jk")
+metadata/_editor_floor_ = Vector3(0, 1, 0)

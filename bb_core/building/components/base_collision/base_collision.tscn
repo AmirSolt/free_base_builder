@@ -1,0 +1,6 @@
+[gd_scene load_steps=2 format=3 uid="uid://bqdfgj05tv587"]
+
+[ext_resource type="Script" uid="uid://g8h1lcyfu3c6" path="res://bb_core/building/components/base_collision/base_collision.gd" id="1_8apjd"]
+
+[node name="BaseCollision" type="CollisionShape3D"]
+script = ExtResource("1_8apjd")

@@ -1,0 +1,18 @@
+[gd_resource type="Resource" script_class="BuildingData" load_steps=5 format=3 uid="uid://dqdyjplbb4v4b"]
+
+[ext_resource type="PackedScene" uid="uid://d53u5jnyfqi1" path="res://bb_core/example/buildings/house/house.tscn" id="1_67q5o"]
+[ext_resource type="PackedScene" uid="uid://cgygjlo3ol4gg" path="res://bb_core/example/buildings/house/house_mesh.tscn" id="1_tkmbx"]
+[ext_resource type="Texture2D" uid="uid://b17cdcvs0orkm" path="res://bb_core/example/assets/images/house_icon.png" id="2_67q5o"]
+[ext_resource type="Script" uid="uid://dhlbdgx5effpp" path="res://bb_core/building/building_data.gd" id="2_nawjn"]
+
+[resource]
+script = ExtResource("2_nawjn")
+icon = ExtResource("2_67q5o")
+display_name = "House"
+description = "This is a house."
+mesh_scene = ExtResource("1_tkmbx")
+building_scene = ExtResource("1_67q5o")
+size = Vector2i(1, 1)
+range = 0
+surface_collision_layer = 2
+metadata/_custom_type_script = "uid://dhlbdgx5effpp"

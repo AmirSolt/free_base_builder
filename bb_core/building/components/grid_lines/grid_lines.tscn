@@ -1,0 +1,14 @@
+[gd_scene load_steps=4 format=3 uid="uid://c5inlb3u63wff"]
+
+[ext_resource type="Script" uid="uid://dx3i58crwexao" path="res://bb_core/building/components/grid_lines/grid_lines.gd" id="2_idpiu"]
+[ext_resource type="Material" uid="uid://b75xxidd7astb" path="res://bb_core/building/components/grid_lines/grid_lines.tres" id="2_phdyv"]
+[ext_resource type="Material" uid="uid://dc44wqdmmyxq4" path="res://bb_core/building/components/grid_lines/shadow_grid_lines.tres" id="3_0jnww"]
+
+[node name="GridLines" type="MeshInstance3D" node_paths=PackedStringArray("sub_mesh")]
+script = ExtResource("2_idpiu")
+sub_mesh = NodePath("SubGridLines")
+grid_lines_mat = ExtResource("2_phdyv")
+shadow_grid_lines_mat = ExtResource("3_0jnww")
+
+[node name="SubGridLines" type="MeshInstance3D" parent="."]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.0316598, 0)

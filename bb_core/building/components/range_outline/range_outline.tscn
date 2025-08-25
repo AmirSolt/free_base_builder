@@ -1,0 +1,8 @@
+[gd_scene load_steps=3 format=3 uid="uid://bvcryjx3d26ic"]
+
+[ext_resource type="Material" uid="uid://cadf2cnddefq" path="res://bb_core/building/components/range_outline/range_outline_mat.tres" id="2_3inpl"]
+[ext_resource type="Script" uid="uid://dln0sm512d36d" path="res://bb_core/building/components/range_outline/range_outline.gd" id="2_g4h2k"]
+
+[node name="RangeOutline" type="MeshInstance3D"]
+script = ExtResource("2_g4h2k")
+range_outline_mat = ExtResource("2_3inpl")

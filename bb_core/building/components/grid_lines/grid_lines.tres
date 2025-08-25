@@ -1,0 +1,11 @@
+[gd_resource type="ShaderMaterial" load_steps=2 format=3 uid="uid://b75xxidd7astb"]
+
+[ext_resource type="Shader" uid="uid://dhufktt736t12" path="res://bb_core/building/components/grid_lines/grid_lines.gdshader" id="1_8u6ow"]
+
+[resource]
+render_priority = 0
+shader = ExtResource("1_8u6ow")
+shader_parameter/line_width = 0.04
+shader_parameter/grid_size = 1.0
+shader_parameter/line_color = Color(1, 1, 1, 0.376471)
+shader_parameter/fill_color = Color(0, 0, 0, 0)
